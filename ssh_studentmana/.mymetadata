@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="ssh_studentmana"
+  id="myeclipse.1497451156910"
+  context-root="/ssh_studentmana"
+  j2ee-spec="6.0"
+  archive="ssh_studentmana.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
