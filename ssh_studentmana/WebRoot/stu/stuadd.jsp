@@ -32,11 +32,10 @@
 				</div>
 				<div style="width: 900px; margin: auto">
 					<form method="post">
-						<table class="table table-bordered">
-							
+						<table class="table table-bordered">							
 							<tr>
-								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">学号：</td>
-								<td width="60%"><input type="text" name="stuno" id="stuno"
+								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">姓名：</td>
+								<td width="60%"><input type="text" name="username" id="username"
 									class="span1-10" /><font color="red">*</font></td>
 							</tr>
 							<tr>
@@ -45,17 +44,22 @@
 									class="span1-10" /><font color="red">*</font></td>
 							</tr>
 							<tr>
-								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">姓名：</td>
-								<td width="60%"><input type="text" name="username" id="username"
+								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">角色：</td>
+								<td width="60%"><input type="text" name="role" id="role"
 									class="span1-10" /><font color="red">*</font></td>
-							</tr>
+							</tr>							
 							<tr>
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">性别：</td>
 								<td width="60%"><select name="sex" id="sex" class="span1-10"><option value="男">男</option><option value="女">女</option></select></td>
 							</tr>
 							<tr>
-								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">年龄：</td>
-								<td width="60%"><input type="text" name="age" id="age"
+								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">生日：</td>
+								<td width="60%"><input type="text" name="birth" id="birth"
+									class="span1-10" /><font color="red">*</font></td>
+							</tr>
+							<tr>
+								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">电话：</td>
+								<td width="60%"><input type="text" name="tel" id="tel"
 									class="span1-10" /><font color="red">*</font></td>
 							</tr>
 							
@@ -76,11 +80,7 @@
 </html>
 <script type="text/javascript">
 function save() {
-	if ($("#stuno").val() == "") {
-		alert("学号不能为空！");
-		return;
-	}
-	if ($("#username").val() == "") {
+	if ($("#uname").val() == "") {
 		alert("姓名不能为空！");
 		return;
 	}
@@ -88,11 +88,11 @@ function save() {
 		alert("密码不能为空！");
 		return;
 	}
-	if ($("#age").val() == "") {
-		alert("年龄不能为空！");
+	if ($("#role").val() == "") {
+		alert("角色不能为空！");
 		return;
 	}
-	document.forms[0].action = "<%=path%>/stu/addstu";
+	document.forms[0].action = "<%=path%>/stu/stuadd";
 	document.forms[0].submit();
 
 }

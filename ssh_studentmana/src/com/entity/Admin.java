@@ -1,24 +1,10 @@
-package com.dto;
+package com.entity;
 
-public class User {
-	private int id;
+public class Admin {
 	private String uname;
 	private String pwd;
 	private String role;
 	
-	
-	public String getRole() {
-		return role;
-	}
-	public void setRole(String role) {
-		this.role = role;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String getUname() {
 		return uname;
 	}
@@ -31,5 +17,12 @@ public class User {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
 	
 }

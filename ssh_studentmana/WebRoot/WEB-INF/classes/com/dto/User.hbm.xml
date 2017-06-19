@@ -10,5 +10,6 @@
 		</id>
 		<property name="uname" column="uname" type="java.lang.String"></property>
 		<property name="pwd" column="pwd" type="java.lang.String"></property>
+		<property name="role" column="role" type="java.lang.String"></property>
 	</class>
 </hibernate-mapping>

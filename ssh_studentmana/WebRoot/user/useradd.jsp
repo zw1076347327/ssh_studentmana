@@ -30,16 +30,21 @@
 					<strong>管理员添加</strong>
 				</div>
 				<div style="width: 900px; margin: auto">
-					<form method="post">
+					<form method="post" >
 						<table class="table table-bordered">
 							<tr>
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">账户名：</td>
-								<td width="60%"><input type="text" name="username" id="username"
+								<td width="60%"><input type="text" name="uname" id="uname"
+									class="span1-10" /></td>
+							</tr>
+							<tr>
+								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">角色：</td>
+								<td width="60%"><input type="text" name="role" id="role"
 									class="span1-10" /></td>
 							</tr>
 							<tr>
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">密码：</td>
-								<td width="60%"><input type="text" name="pwd" id="pwd"
+								<td width="60%"><input type="password" name="pwd" id="pwd"
 									class="span1-10" /></td>
 							</tr>
 						</table>
@@ -59,15 +64,20 @@
 </html>
 <script>
 function save() {
-	if ($("#username").val() == "") {
+	if ($("#uname").val() == "") {
 		alert("用户名不能为空！");
 		return;
 	}
+	if ($("#role").val() == "") {
+		alert("角色不能为空！");
+		return;
+	}
+	
 	if ($("#pwd").val() == "") {
 		alert("密码不能为空！");
 		return;
 	}
-	document.forms[0].action = "<%=path%>/user/adduser";
+	document.forms[0].action = "admin_add";
 	document.forms[0].submit();
 
 }

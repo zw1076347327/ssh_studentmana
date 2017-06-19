@@ -35,8 +35,13 @@
 						<table class="table table-bordered">
 							
 							<tr>
-								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">课程名：</td>
-								<td width="60%"><input type="text" name="name" id="name"
+								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">姓名：</td>
+								<td width="60%"><input type="text" name="uname" id="uname"
+									class="span1-10" /><font color="red">*</font></td>
+							</tr>
+							<tr>
+								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">专业名：</td>
+								<td width="60%"><input type="text" name="speciality" id="speciality"
 									class="span1-10" /><font color="red">*</font></td>
 							</tr>
 							<tr>
@@ -44,11 +49,7 @@
 								<td width="60%"><input type="text" name="teacher" id="teacher"
 									class="span1-10" /><font color="red">*</font></td>
 							</tr>
-							<tr>
-								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">课时数：</td>
-								<td width="60%"><input type="text" name="period" id="period"
-									class="span1-10" /><font color="red">*</font></td>
-							</tr>
+							
 							
 							
 						</table>
@@ -68,19 +69,20 @@
 </html>
 <script type="text/javascript">
 function save() {
-	if ($("#name").val() == "") {
-		alert("课程名称不能为空！");
+	if ($("#uname").val() == "") {
+		alert("姓名不能为空！");
+		return;
+	}
+	if ($("#speciality").val() == "") {
+		alert("专业名称不能为空！");
 		return;
 	}
 	if ($("#teacher").val() == "") {
 		alert("授课老师不能为空！");
 		return;
 	}
-	if ($("#period").val() == "") {
-		alert("课时数不能为空！");
-		return;
-	}
-	document.forms[0].action = "<%=path%>/course/addcourse";
+	
+	document.forms[0].action = "<%=path%>/speciality/specialityadd";
 	document.forms[0].submit();
 
 }

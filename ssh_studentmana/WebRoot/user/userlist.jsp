@@ -34,38 +34,25 @@
 					</span> <strong>管理员管理</strong>
 				</div>
 				<div style="width: 900px; margin: auto">
-					<form method="post">
-						<table class="table table-bordered">
-							<tr>
-								<td width="10%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">用户名：</td>
-								<td width="23%"><input type="text" name="username" /></td>
-							</tr>
-						</table>
-
-						<table class="margin-bottom-20 table  no-border">
-							<tr>
-								<td class="text-center"><input type="button"
-									onclick="query();" value="查询" class="btn btn-info "
-									style="width: 80px;" /></td>
-							</tr>
-						</table>
-					</form>
+					
 					<table class="table table-bordered table-hover table-striped">
 						<tbody>
 							<tr align="center">
 								<td><strong>ID</strong></td>
 								<td><strong>用户名</strong></td>
 								<td><strong>密码</strong></td>
+								<td><strong>角色</strong></td>
 								<td><strong>操作</strong></td>
 							</tr>
-							<c:forEach items="${userList}" var="user">
+							<c:forEach items="${list}" var="user">
 								<tr align="center">
 									<td>${user.id}</td>
-									<td>${user.username}</td>
+									<td>${user.uname}</td>
 									<td>${user.pwd}</td>
+									<td>${user.role}</td>
 									<td nowrap="nowrap"><a
-										href="<%=path%>/user/toupdateuser?id=${user.id}">编辑</a>&nbsp;|&nbsp;<a
-										href="<%=path%>/user/deleteuser?id=${user.id}">删除</a></td>
+										href="<%=path%>/toupdateuser.action?id=${user.id}">编辑</a>&nbsp;|&nbsp;<a
+										href="<%=path%>/user_deleteuser.action?id=${user.id}">删除</a></td>
 								</tr>
 							</c:forEach>
 

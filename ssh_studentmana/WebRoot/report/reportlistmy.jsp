@@ -50,16 +50,16 @@
 						<tbody>
 							<tr align="center">
 								<td><strong>ID</strong></td>
-								<td><strong>学号</strong></td>
+								<td><strong>姓名</strong></td>
 								<td><strong>课程名称</strong></td>
 								<td><strong>成绩</strong></td>
 							</tr>
 							<c:forEach items="${reportList}" var="report">
 								<tr align="center">
 									<td>${report.id}</td>
-									<td>${report.stuno}</td>
-									<td>${report.coursename}</td>
-									<td>${report.score}</td>
+									<td>${report。uname}</td>
+									<td>${report.course}</td>
+									<td>${report.price}</td>
 									
 								</tr>
 							</c:forEach>
@@ -76,7 +76,7 @@
 </html>
 <script language="JavaScript">	
 function query() {		
-	var action = "<%=path%>/report/listmy";
+	var action = "<%=path%>/report/reportlistmy";
 		document.forms[0].action = action;
 		document.forms[0].submit();
 	}

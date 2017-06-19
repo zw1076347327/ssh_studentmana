@@ -34,7 +34,7 @@
 					</span> <strong>学生管理</strong>
 				</div>
 				<div style="width: 900px; margin: auto">
-					<form method="post">
+					<!-- <form method="post">
 						<table class="table table-bordered">
 							<tr>
 								<td width="10%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">学号：</td>
@@ -49,7 +49,7 @@
 									style="width: 80px;" /></td>
 							</tr>
 						</table>
-					</form>
+					</form> -->
 					<table class="table table-bordered table-hover table-striped">
 						<tbody>
 							<tr align="center">

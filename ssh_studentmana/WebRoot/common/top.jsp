@@ -5,7 +5,7 @@
 	</div>
 
 	<div class="header-right">
-		<i class="icon-user icon-white""></i> <a href="javascript:viod(0)">${uname }(${type})</a> <i
+		<i class="icon-user icon-white""></i> <a href="javascript:viod(0)">${user.uname } (${user.role})</a> <i
 			class="icon-off icon-white"></i> <a id="modal-973558"
 			href="#modal-container-973558" role="button" data-toggle="modal">注销</a>
 		<div id="modal-container-973558" class="modal hide fade" role="dialog"

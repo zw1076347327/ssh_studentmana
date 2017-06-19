@@ -11,9 +11,8 @@
 		<img src="img/tit.png" alt="" />
 	</div>
 	<div class="login-wrap">
-		<form method="post" action="login">
-			<input type="hidden" id="messageInfo"
-				value="${requestScope.messageInfo}" />
+		<form method="post" >
+		
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td height="25" valign="bottom">用户名：</td>
@@ -33,9 +32,9 @@
 					<td height="35" valign="bottom">身份：</td>
 				</tr>
 				<tr>
-					<td><select name="type">
+					<td><select name="role">
 							<option value="stu" selected="selected">学生</option>
-							<option value="user">管理员</option>
+							<option value="admin">管理员</option>
 					</select></td>
 				</tr>
 				<tr>
@@ -63,12 +62,4 @@
 		document.forms[0].action = "login";
 		document.forms[0].submit();
 	}
-	
-	$(document).ready(function(){
-	 var $messageInfo = $("#messageInfo").val();
-	 if($messageInfo != null && $messageInfo != ""){
-		 alert($messageInfo);
-		 $("#messageInfo").val("");
-	 }
-  });
 </script>

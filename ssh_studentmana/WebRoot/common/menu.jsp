@@ -11,35 +11,34 @@
 	</script>
 
 	<div id="my_menu" class="sdmenu">
-		<c:if test="${type=='管理员' }">
+		<c:if test="${user.role=='admin' }">
 			<div>
-				<span>管理员管理</span> <a href="user/list">管理员管理</a> <a
-					href="user/useradd.jsp">管理员添加</a>
+				<span>管理员管理</span> <a href="admin_list">管理员管理</a> <a
+					href="admin_toadd">管理员添加</a>
 			</div>
 
 			<div class="collapsed">
-				<span>学生管理</span> <a href="stu/list">学生管理</a><a
+				<span>学生管理</span> <a href="stu/stulist">学生管理</a><a
 					href="stu/stuadd.jsp">学生添加</a>
 			</div>
 		</c:if>
 		<div class="collapsed">
-			<span>课程管理</span> 
-				<a href="course/list">课程管理</a>
-				
-			<c:if test="${type=='管理员' }"><a
-				href="course/courseadd.jsp">课程添加</a>
+			<span>专业管理</span> 
+				<a href="speciality/specialitylist.jsp">专业管理</a>				
+			<c:if test="${user.role=='admin' }">
+				<a href="speciality/specialityadd.jsp">专业添加</a>
 			</c:if>	
 		</div>
 
 		<div class="collapsed">
 			<span>成绩管理</span>
-			<c:if test="${type=='管理员' }">
+			<c:if test="${user.role=='admin' }">
 				
-				<a href="report/list">成绩管理</a>
-				<a href="report/toaddreport">成绩添加</a>
+				<a href="report/reportalist.jsp">成绩管理</a>
+				<a href="report/reportadd">成绩添加</a>
 			</c:if>
-			<c:if test="${type=='学生' }">
-			    <a href="report/listmy">成绩查看</a>
+			<c:if test="${user.role=='stu' }">
+			    <a href="report/reportlistmy.jsp">成绩查看</a>
 			</c:if>
 		</div>
 

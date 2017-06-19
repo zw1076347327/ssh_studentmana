@@ -1,5 +1,7 @@
 package com.action;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
@@ -7,10 +9,11 @@ import org.apache.struts2.ServletActionContext;
 import com.dto.User;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 import com.service.UserService;
 import com.service.UserServiceImpl;
 
-public class UserAction extends ActionSupport {
+public class UserAction extends ActionSupport implements ModelDriven<User>{
 	
 	private UserService userService;
 	
@@ -18,35 +21,23 @@ public class UserAction extends ActionSupport {
 		this.userService = userService;
 	}
 	
-	//属性封装
-	private String uname;
-	private String pwd;
+	private User user;
 	
-	public String getUname() {
-		return uname;
+	public User getUser() {
+		return user;
 	}
-	public void setUname(String uname) {
-		this.uname = uname;
-	}
-	public String getPwd() {
-		return pwd;
-	}
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	//登录
 	public String login(){
-		User user = new User();
-		user.setUname(uname);
-		user.setPwd(pwd);
-		System.out.println("!!!"+uname+" ++"+pwd);
-		System.out.println("!!!进去 action");
-		//调用service的方法实现
+		this.user.setUname(user.getUname());
+		this.user.setPwd(user.getPwd());
+		this.user.setRole(user.getRole());
 		User userExist = userService.login(user);
 		
 		if (userExist!=null) {
-			//session保持登录状态
 			HttpServletRequest request = ServletActionContext.getRequest();
 			request.getSession().setAttribute("user", userExist);
 			return SUCCESS;
@@ -54,4 +45,13 @@ public class UserAction extends ActionSupport {
 			return LOGIN;
 		}
 	}
+	
+	public User getModel() {
+		if (this.user == null) 
+			user = new User();
+			return user;
+		
+		
+	}
+	
 }

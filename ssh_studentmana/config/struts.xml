@@ -4,11 +4,29 @@
 	"http://struts.apache.org/dtds/struts-2.1.dtd">
 
 <struts>
+	<!--登录验证  -->
 	<package name="demo1" extends="struts-default" >
 		<action name="login" class="userAction" method="login">
 			<result name="success">/index.jsp</result>
 			<result name="login">/login.jsp</result>
 		</action>
 	</package>
+	
+	<package name="demo2" extends="struts-default">
+	<!-- 到添加界面 -->
+		<action name="admin_toadd" class="adminAction" method="toaddPage">
+			<result name="toaddPage">/user/useradd.jsp</result>
+		</action>
+	<!-- 添加管理员 -->	
+		<action name="admin_add" class="adminAction" method="add">
+			<result name="add" type="redirectAction">admin_list</result>
+		</action>
+	<!-- 列表界面 -->	
+		<action name="admin_list" class="adminAction" method="list">
+			<result name="list">/user/userlist.jsp</result>
+		</action>
+	</package>
+	
+	
 </struts>
 	
