@@ -11,5 +11,9 @@
 		<property name="uname" column="uname" type="java.lang.String"></property>
 		<property name="pwd" column="pwd" type="java.lang.String"></property>
 		<property name="role" column="role" type="java.lang.String"></property>
+		<property name="sex" column="sex" type="java.lang.String"></property>
+		<property name="birth" column="birth" type="java.lang.String"></property>
+		<property name="tel" column="tel" type="java.lang.Integer"></property>
+		<property name="address" column="address" type="java.lang.String"></property>
 	</class>
 </hibernate-mapping>

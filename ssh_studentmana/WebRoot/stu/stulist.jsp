@@ -34,51 +34,43 @@
 					</span> <strong>学生管理</strong>
 				</div>
 				<div style="width: 900px; margin: auto">
-					<!-- <form method="post">
-						<table class="table table-bordered">
-							<tr>
-								<td width="10%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">学号：</td>
-								<td width="23%"><input type="text" name="stuno" /></td>
-							</tr>
-						</table>
-
-						<table class="margin-bottom-20 table  no-border">
-							<tr>
-								<td class="text-center"><input type="button"
-									onclick="query();" value="查询" class="btn btn-info "
-									style="width: 80px;" /></td>
-							</tr>
-						</table>
-					</form> -->
+				
 					<table class="table table-bordered table-hover table-striped">
 						<tbody>
 							<tr align="center">
 								<td><strong>ID</strong></td>
-								<td><strong>学号</strong></td>
 								<td><strong>姓名</strong></td>
-								<td><strong>密码</strong></td>
 								<td><strong>性别</strong></td>
-								<td><strong>年龄</strong></td>
+								<td><strong>出生日期</strong></td>
+								<td><strong>联系方式</strong></td>
+								<td><strong>家庭住址</strong></td>
 								<td><strong>操作</strong></td>
 							</tr>
-							<c:forEach items="${stuList}" var="stu">
+							<c:forEach items="${pageBean.list}" var="stu">
 								<tr align="center">
 									<td>${stu.id}</td>
-									<td>${stu.stuno}</td>
-									<td>${stu.username}</td>
-									<td>${stu.pwd}</td>
+									<td>${stu.uname}</td>
 									<td>${stu.sex}</td>
-									<td>${stu.age}</td>
-									<td nowrap="nowrap"><a
-										href="<%=path%>/stu/toupdatestu?id=${stu.id}">编辑</a>&nbsp;|&nbsp;<a
-										href="<%=path%>/stu/deletestu?id=${stu.id}">删除</a></td>
+									<td>${stu.birth}</td>
+									<td>${stu.tel}</td>
+									<td>${stu.address}</td>
+									<td nowrap="nowrap">
+										<a href="<%=path%>/stu/toupdatestu?id=${stu.id}">编辑</a>&nbsp;|&nbsp;
+										<a href="<%=path%>/stu/deletestu?id=${stu.id}">删除</a>
+									</td>
 								</tr>
 							</c:forEach>
 
 						</tbody>
 					</table>
-
-
+					<ul style="text-align: center">
+						<li style="list-style:none">												
+							<p style="float:right">当前页：</p>
+							<p style="float:right">总页数：</p>
+							<a style="float:right ">下一页</a>
+							<a style="float:right ">上一页</a>					
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>

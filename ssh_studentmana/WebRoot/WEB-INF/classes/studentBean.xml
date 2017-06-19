@@ -13,17 +13,16 @@
            http://www.springframework.org/schema/tx 
            http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
            
-	<bean id="adminAction" class="com.action.AdminAction" scope="prototype">
-		<property name="adminService" ref="adminServiceImpl"></property>
+	<bean id="studentAction" class="com.action.StudentAction" scope="prototype">
+		<property name="studentService" ref="studentServiceImpl"></property>
 	</bean>
 	
-	<bean id="adminServiceImpl" class="com.service.AdminServiceImpl">
-		<property name="adminDao" ref="adminDaoImpl" ></property>
+	<bean id="studentServiceImpl" class="com.service.StudentServiceImpl">
+		<property name="studentDao" ref="studentDaoImpl" ></property>
 	</bean>
 	
-	<bean id="adminDaoImpl" class="com.dao.AdminDaoImpl">
+	<bean id="studentDaoImpl" class="com.dao.StudentDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	
 	
 </beans>

@@ -38,7 +38,11 @@
 			<result name="update" type="redirectAction">admin_list</result>
 		</action>
 	</package>
-	
-	
+	<!--分页显示  -->
+	<package name="demo3" extends="struts-default">
+		<action name="stu_list" class="studentAction" method="listpage">
+			<result name="listpage">/stu/stulist.jsp</result>
+		</action>
+	</package>
 </struts>
 	

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.dao.AdminDao;
 import com.dto.User;
-import com.entity.Admin;
+
 
 public class AdminServiceImpl implements AdminService {
 	private AdminDao adminDao;

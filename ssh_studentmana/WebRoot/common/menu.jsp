@@ -18,7 +18,7 @@
 			</div>
 
 			<div class="collapsed">
-				<span>学生管理</span> <a href="stu/stulist">学生管理</a><a
+				<span>学生管理</span> <a href="stu_list.action?currentPage=1">学生管理</a><a
 					href="stu/stuadd.jsp">学生添加</a>
 			</div>
 		</c:if>

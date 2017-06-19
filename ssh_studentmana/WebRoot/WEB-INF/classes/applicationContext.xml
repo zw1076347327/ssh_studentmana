@@ -36,6 +36,7 @@
 		    <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 		    <prop key="hibernate.show_sql">true</prop>
 		    <prop key="hibernate.hbm2ddl.auto">update</prop>
+		    <prop key="hibernate.current_session_context_class">thread</prop>
 		  </props>
 		</property>
 		<!-- 映射文件 -->
@@ -59,4 +60,5 @@
 	</bean>
 	
 	<import resource="classpath:/adminBean.xml"/>
+	<import resource="classpath:/studentBean.xml"/>
 </beans>

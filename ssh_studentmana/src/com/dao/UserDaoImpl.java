@@ -21,16 +21,7 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 		}
 	}
 
-	/*public List<User> queryUserList(User user){
-		Map<String, Object> map = new HashMap<String, Object>();
-		if(user!=null){
-			map.put("uname", user.getUname());
-			map.put("pwd", user.getPwd());
-		}
-		return (List<User>) user;
-		
-	}
-*/
+	
 	
 
 	
