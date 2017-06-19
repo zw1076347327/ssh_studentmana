@@ -33,8 +33,8 @@
 				</tr>
 				<tr>
 					<td><select name="role">
-							<option value="stu" selected="selected">学生</option>
-							<option value="admin">管理员</option>
+							<option value="学生" selected="selected">学生</option>
+							<option value="管理员">管理员</option>
 					</select></td>
 				</tr>
 				<tr>

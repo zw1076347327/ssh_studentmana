@@ -39,7 +39,7 @@
 							</tr>
 							<tr>
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">角色：</td>
-								<td width="60%"><input type="text" value="admin" name="role" id="role"
+								<td width="60%"><input type="text" value="${user.role}" name="role" id="role"
 									class="span1-10" readonly="readonly" /></td>
 							</tr>
 							<tr>

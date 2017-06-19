@@ -15,7 +15,7 @@ public class AdminDaoImpl extends HibernateDaoSupport implements AdminDao {
 	//查询管理员
 	@SuppressWarnings("unchecked")
 	public List<User> findAll() {
-		return (List<User>)super.getHibernateTemplate().find("from User");
+		return (List<User>)super.getHibernateTemplate().find("from User u where u.role = '管理员'");
 	}
 	
 	//根据id查询对象
