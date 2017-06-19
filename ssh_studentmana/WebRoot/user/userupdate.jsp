@@ -27,7 +27,7 @@
 				</ul>
 
 				<div class="title_right">
-					<strong>管理员添加</strong>
+					<strong>管理员更新</strong>
 				</div>
 				<div style="width: 900px; margin: auto">
 					<form method="post">
@@ -36,7 +36,8 @@
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">账户名：</td>
 								<td width="60%">
 								<input type="hidden" name="id" id="id" value="${user.id}"/>
-								<input type="text" name="username" id="username" value="${user.uname}"
+								<input type="hidden" name="role" id="id" value="${user.role}"/>
+								<input type="text" name="uname" id="uname" value="${user.uname}"
 									class="span1-10" /></td>
 							</tr>
 							<tr>
@@ -61,7 +62,7 @@
 </html>
 <script>
 function save() {
-	if ($("#username").val() == "") {
+	if ($("#uname").val() == "") {
 		alert("用户名不能为空！");
 		return;
 	}
@@ -69,7 +70,7 @@ function save() {
 		alert("密码不能为空！");
 		return;
 	}
-	document.forms[0].action = "<%=path%>/user/updateuser";
+	document.forms[0].action = "update_admin";
 	document.forms[0].submit();
 
 }

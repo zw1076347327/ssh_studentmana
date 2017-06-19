@@ -29,6 +29,12 @@ public class AdminServiceImpl implements AdminService {
 		adminDao.delete(u);
 	}
 
+	public void update(User user) {
+		adminDao.update(user);
+	}
+
+	
+
 	
 	
 }

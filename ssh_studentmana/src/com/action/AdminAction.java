@@ -26,7 +26,6 @@ public class AdminAction extends ActionSupport implements ModelDriven<User>{
 		return user;
 	}
 	
-
 	//到添加界面
 	public String toaddPage(){
 		return "toaddPage";
@@ -64,4 +63,10 @@ public class AdminAction extends ActionSupport implements ModelDriven<User>{
 		return "toupdate";
 	}
 	
+	//更新
+	public String admin_update(){
+		adminService.update(user);
+		return "update";
+		
+	}
 }

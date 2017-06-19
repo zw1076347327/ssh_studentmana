@@ -33,6 +33,10 @@
 		<action name="toupdate" class="adminAction" method="admin_toupdate">
 			<result name="toupdate" >/user/userupdate.jsp</result>
 		</action>
+	<!--更新用户 -->
+		<action name="update_admin" class="adminAction" method="admin_update">
+			<result name="update" type="redirectAction">admin_list</result>
+		</action>
 	</package>
 	
 	

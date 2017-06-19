@@ -14,4 +14,6 @@ public interface AdminDao {
 
 	void delete(User u);
 
+	void update(User user);
+
 }

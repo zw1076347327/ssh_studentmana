@@ -14,4 +14,8 @@ public interface AdminService {
 
 	void delete(User u);
 
+	void update(User user);
+
+	
+
 }

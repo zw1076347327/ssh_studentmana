@@ -28,6 +28,11 @@ public class AdminDaoImpl extends HibernateDaoSupport implements AdminDao {
 		super.getHibernateTemplate().delete(u);
 	}
 
+	//更新管理员
+	public void update(User user) {
+		super.getHibernateTemplate().update(user);
+	}
+
 	
 	
 }
