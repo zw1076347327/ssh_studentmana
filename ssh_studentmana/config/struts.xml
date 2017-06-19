@@ -25,6 +25,10 @@
 		<action name="admin_list" class="adminAction" method="list">
 			<result name="list">/user/userlist.jsp</result>
 		</action>
+	<!-- 删除用户 -->
+		<action name="user_deleteuser" class="adminAction" method="admin_delete">
+			<result name="delete" type="redirectAction">admin_list</result>
+		</action>
 	</package>
 	
 	

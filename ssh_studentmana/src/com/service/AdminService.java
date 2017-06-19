@@ -10,4 +10,8 @@ public interface AdminService {
 
 	List<User> findAll();
 
+	User findOne(int id);
+
+	void delete(User u);
+
 }

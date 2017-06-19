@@ -12,6 +12,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.service.UserService;
 import com.service.UserServiceImpl;
+import com.sun.org.apache.bcel.internal.generic.NEW;
 
 public class UserAction extends ActionSupport implements ModelDriven<User>{
 	
@@ -21,13 +22,9 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 		this.userService = userService;
 	}
 	
-	private User user;
-	
-	public User getUser() {
+	private User user = new User(); 
+	public User getModel() {
 		return user;
-	}
-	public void setUser(User user) {
-		this.user = user;
 	}
 
 	//µÇÂ¼
@@ -46,12 +43,6 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 		}
 	}
 	
-	public User getModel() {
-		if (this.user == null) 
-			user = new User();
-			return user;
-		
-		
-	}
+	
 	
 }

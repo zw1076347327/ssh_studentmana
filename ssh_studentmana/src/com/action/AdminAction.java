@@ -21,14 +21,11 @@ public class AdminAction extends ActionSupport implements ModelDriven<User>{
 		this.adminService = adminService;
 	}
 	
-	private User user;		
-	
-	public User getUser() {
+	private User user = new User();		
+	public User getModel() {
 		return user;
 	}
-	public void setUser(User user) {
-		this.user = user;
-	}
+	
 
 	//到添加界面
 	public String toaddPage(){
@@ -54,12 +51,10 @@ public class AdminAction extends ActionSupport implements ModelDriven<User>{
 	//删除管理员
 	public String admin_delete(){
 		int id = user.getId();
+		User u = adminService.findOne(id);
+		adminService.delete(u);
 		return "delete";
 	}
 
-	public User getModel() {
-		if(user == null)
-		user = new User(); 
-		return user;
-	}
+	
 }
