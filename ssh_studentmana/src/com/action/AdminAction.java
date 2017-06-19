@@ -55,6 +55,13 @@ public class AdminAction extends ActionSupport implements ModelDriven<User>{
 		adminService.delete(u);
 		return "delete";
 	}
-
+	
+	//到更新界面
+	public String admin_toupdate(){
+		int id = user.getId();
+		User u = adminService.findOne(id);
+		ServletActionContext.getRequest().setAttribute("user", u);
+		return "toupdate";
+	}
 	
 }

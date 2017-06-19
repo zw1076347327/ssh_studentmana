@@ -29,6 +29,10 @@
 		<action name="user_deleteuser" class="adminAction" method="admin_delete">
 			<result name="delete" type="redirectAction">admin_list</result>
 		</action>
+	<!--到更新界面  -->	
+		<action name="toupdate" class="adminAction" method="admin_toupdate">
+			<result name="toupdate" >/user/userupdate.jsp</result>
+		</action>
 	</package>
 	
 	

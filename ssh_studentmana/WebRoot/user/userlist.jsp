@@ -51,7 +51,7 @@
 									<td>${user.pwd}</td>
 									<td>${user.role}</td>
 									<td nowrap="nowrap"><a
-										href="<%=path%>/toupdateuser.action?id=${user.id}">编辑</a>&nbsp;|&nbsp;<a
+										href="<%=path%>/toupdate.action?id=${user.id}">编辑</a>&nbsp;|&nbsp;<a
 										href="<%=path%>/user_deleteuser.action?id=${user.id}">删除</a></td>
 								</tr>
 							</c:forEach>

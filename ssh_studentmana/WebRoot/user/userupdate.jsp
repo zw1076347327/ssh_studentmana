@@ -36,7 +36,7 @@
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">账户名：</td>
 								<td width="60%">
 								<input type="hidden" name="id" id="id" value="${user.id}"/>
-								<input type="text" name="username" id="username" value="${user.username}"
+								<input type="text" name="username" id="username" value="${user.uname}"
 									class="span1-10" /></td>
 							</tr>
 							<tr>
