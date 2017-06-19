@@ -11,4 +11,12 @@ public interface StudentDao {
 
 	List<User> findPage(int begin, int pageSize);
 
+	void add(User user);
+
+	User findOne(int id);
+
+	void delete(User u);
+
+	void update(User user);
+
 }

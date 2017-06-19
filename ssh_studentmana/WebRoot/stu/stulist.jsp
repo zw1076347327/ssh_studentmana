@@ -56,19 +56,25 @@
 									<td>${stu.address}</td>
 									<td nowrap="nowrap">
 										<a href="<%=path%>/stu/toupdatestu?id=${stu.id}">编辑</a>&nbsp;|&nbsp;
-										<a href="<%=path%>/stu/deletestu?id=${stu.id}">删除</a>
+										<a href="<%=path%>/student_deletestu?id=${stu.id}">删除</a>
 									</td>
 								</tr>
 							</c:forEach>
-
+						
 						</tbody>
 					</table>
 					<ul style="text-align: center">
-						<li style="list-style:none">												
-							<p style="float:right">当前页：</p>
-							<p style="float:right">总页数：</p>
-							<a style="float:right ">下一页</a>
-							<a style="float:right ">上一页</a>					
+						<li style="list-style:none">	
+						<c:if test="${pageBean.currentPage!=pageBean.totalPage }">
+							<a style="float:right" href="stu_list.action?currentPage=${pageBean.currentPage + 1}">下一页</a>
+						</c:if>
+						&nbsp
+						<c:if test="${pageBean.currentPage!=1 }">
+							<a style="float:right" href="stu_list.action?currentPage=${pageBean.currentPage - 1}">上一页</a>
+						</c:if>
+							<p style="float:right">当前第[ ${pageBean.currentPage} ]页，</p>
+							<p style="float:right">[ ${pageBean.totalPage} ]页，</p>
+							<p style="float:right">共[ ${pageBean.totalCount} ]条记录，</p>
 						</li>
 					</ul>
 				</div>

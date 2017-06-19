@@ -38,11 +38,34 @@
 			<result name="update" type="redirectAction">admin_list</result>
 		</action>
 	</package>
-	<!--分页显示  -->
+	
 	<package name="demo3" extends="struts-default">
+		<!--分页显示  -->
 		<action name="stu_list" class="studentAction" method="listpage">
 			<result name="listpage">/stu/stulist.jsp</result>
 		</action>
+		
+		
+		<!-- 到学生添加界面 -->
+		<action name="student_toadd" class="studentAction" method="toaddPage">
+			<result name="toaddPage">/stu/stuadd.jsp</result>
+		</action>
+		<!-- 添加学生 -->	
+		<action name="student_add" class="studentAction" method="add">
+			<result name="add" type="redirectAction">stu_list</result>
+		</action>
+		<!-- 删除学生 -->
+		<action name="student_deletestu" class="studentAction" method="student_delete">
+			<result name="delete" type="redirectAction" >stu_list</result>
+		</action>	
+		<!--到更新界面  -->	
+		<action name="toupdatestu" class="studentAction" method="student_toupdate">
+			<result name="toupdate" >/stu/stuupdate.jsp</result>
+		</action>
+		<!--更新用户 -->
+		<action name="update_student" class="studentAction" method="student_update">
+			<result name="update" type="redirectAction">stu_list</result>
+		</action>	
 	</package>
 </struts>
 	

@@ -92,7 +92,7 @@ function save() {
 		alert("角色不能为空！");
 		return;
 	}
-	document.forms[0].action = "<%=path%>/stu/stuadd";
+	document.forms[0].action = "student_add";
 	document.forms[0].submit();
 
 }

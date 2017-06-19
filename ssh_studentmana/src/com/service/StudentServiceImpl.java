@@ -37,4 +37,20 @@ public class StudentServiceImpl implements StudentService {
 		pageBean.setList(list);
 		return pageBean;
 	}
+
+	public void add(User user) {
+		studentDao.add(user);
+	}
+	
+	public User findOne(int id) {
+		return studentDao.findOne(id);
+	}
+
+	public void delete(User u) {
+		studentDao.delete(u);
+	}
+	
+	public void update(User user) {
+		studentDao.update(user);
+	}
 }
