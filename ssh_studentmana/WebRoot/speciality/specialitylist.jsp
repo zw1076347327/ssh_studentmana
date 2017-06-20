@@ -27,57 +27,34 @@
 				</ul>
 
 				<div class="title_right">
-					<c:if test="${role=='admin' }">
+				
 					<span class="pull-right margin-bottom-5"><a
 						class="btn btn-info btn-small" id="modal-9735581"
 						href="<%=path%>/speciality/specialityadd.jsp" role="button"><i
 							class="icon-plus icon-white"></i> 添加专业</a>
 					</span> 
-					</c:if>
-					<strong>课程管理</strong>
+					
+					<strong>专业管理</strong>
 				</div>
 				<div style="width: 900px; margin: auto">
-					<!-- <form method="post">
-						<table class="table table-bordered">
-							<tr>
-								<td width="10%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">课程名称：</td>
-								<td width="23%"><input type="text" name="name" /></td>
-								<td width="10%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">授课老师：</td>
-								<td width="23%"><input type="text" name="teacher" /></td>
-							</tr>
-						</table>
-
-						<table class="margin-bottom-20 table  no-border">
-							<tr>
-								<td class="text-center"><input type="button"
-									onclick="query();" value="查询" class="btn btn-info "
-									style="width: 80px;" /></td>
-							</tr>
-						</table>
-					</form> -->
 					<table class="table table-bordered table-hover table-striped">
 						<tbody>
 							<tr align="center">
 								<td><strong>ID</strong></td>
 								<td><strong>姓名</strong></td>
 								<td><strong>课程名</strong></td>
-								<td><strong>授课老师</strong></td>								
-								<c:if test="${role=='admin' }">
-								<td><strong>操作</strong></td>
-								</c:if>
+								<td><strong>授课老师</strong></td>						
+								<td><strong>操作</strong></td>								
 							</tr>
-							<c:forEach items="${specialityList}" var="speciality">
+							<c:forEach items="${list}" var="speciality">
 								<tr align="center">
 									<td>${speciality.id}</td>
-									<td>${speciality.name}</td>
+									<td>${speciality.uname}</td>
 									<td>${speciality.speciality}</td>
-									<td>${speciality.teacher}</td>
-									<td>${speciality.period}</td>
-									<c:if test="${role=='admin' }">
+									<td>${speciality.teacher}</td>									
 									<td nowrap="nowrap"><a
-										href="<%=path%>/course/toupdatecourse?id=${speciality.id}">编辑</a>&nbsp;|&nbsp;<a
-										href="<%=path%>/course/deletecourse?id=${speciality.id}">删除</a></td>
-									</c:if>
+										href="<%=path%>/speciality/toupdatespec?id=${speciality.id}">编辑</a>&nbsp;|&nbsp;<a
+										href="<%=path%>/speciality_deletespec.action?id=${speciality.id}">删除</a></td>
 								</tr>
 							</c:forEach>
 
@@ -93,7 +70,7 @@
 </html>
 <script language="JavaScript">	
 function query() {		
-	var action = "<%=path%>/speciality/specialitylist";
+	var action = "<%=path%>/speciality/list";
 		document.forms[0].action = action;
 		document.forms[0].submit();
 	}

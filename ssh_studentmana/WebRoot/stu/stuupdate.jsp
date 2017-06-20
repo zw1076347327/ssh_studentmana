@@ -27,7 +27,7 @@
 				</ul>
 
 				<div class="title_right">
-					<strong>学生添加</strong>
+					<strong>学生编辑</strong>
 				</div>
 				<div style="width: 900px; margin: auto">
 					<form method="post">
@@ -43,7 +43,7 @@
 							</tr>
 							<tr>
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">密码：</td>
-								<td width="60%"><input type="text" name="pwd" id="pwd" value="${user.pwd}"
+								<td width="60%"><input type="password" name="pwd" id="pwd" value="${user.pwd}"
 									class="span1-10" /></td>
 							</tr>			
 							<tr>

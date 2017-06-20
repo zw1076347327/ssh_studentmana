@@ -15,5 +15,6 @@
 		<property name="birth" column="birth" type="java.lang.String"></property>
 		<property name="tel" column="tel" type="java.lang.Integer"></property>
 		<property name="address" column="address" type="java.lang.String"></property>
+		<!-- <many-to-one name="report" class="Report" column="RESUSERSID" cascade="all" unique="true"></many-to-one> -->
 	</class>
 </hibernate-mapping>

@@ -31,24 +31,26 @@
 				</div>
 				<div style="width: 900px; margin: auto">
 					<form method="post">
-						<table class="table table-bordered">
- 
+						<table class="table table-bordered"> 
+ 							<tr>
+								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">姓名：</td>
+								<td width="60%">
+								<input type="hidden" name="id" id="id" value="${speciality.id}"/>
+								<input type="text" name="uname" id="uname" value="${speciality.uname}"
+									class="span1-10" readonly="readonly" /><font color="red">*</font></td>
+							</tr>
 							<tr>
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">课程名：</td>
-								<td width="60%"><input type="hidden" name="id" id="id"
-									value="${course.id}" /><input type="text" name="name" id="name" value="${course.name}"
+								<td width="60%">
+								<input type="text" name="speciality" id="speciality" value="${speciality.speciality}"
 									class="span1-10" /><font color="red">*</font></td>
 							</tr>
 							<tr>
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">授课老师：</td>
-								<td width="60%"><input type="text" name="teacher" id="teacher" value="${course.teacher}"
+								<td width="60%"><input type="text" name="teacher" id="teacher" value="${speciality.teacher}"
 									class="span1-10" /><font color="red">*</font></td>
 							</tr>
-							<tr>
-								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">课时数：</td>
-								<td width="60%"><input type="text" name="period" id="period" value="${course.period}"
-									class="span1-10" /><font color="red">*</font></td>
-							</tr>
+							
 
 
 						</table>
@@ -71,19 +73,20 @@
 </html>
 <script>
 function save() {
-	if ($("#name").val() == "") {
-		alert("课程名称不能为空！");
+	if ($("#uname").val() == "") {
+		alert("姓名不能为空！");
+		return;
+	}
+	if ($("#speciality").val() == "") {
+		alert("课程名不能为空！");
 		return;
 	}
 	if ($("#teacher").val() == "") {
 		alert("授课老师不能为空！");
 		return;
 	}
-	if ($("#period").val() == "") {
-		alert("课时数不能为空！");
-		return;
-	}
-	document.forms[0].action = "<%=path%>/course/updatecourse";
+	
+	document.forms[0].action = "update_speciality";
 	document.forms[0].submit();
 
 }

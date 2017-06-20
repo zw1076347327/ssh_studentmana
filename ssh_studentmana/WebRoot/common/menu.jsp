@@ -24,21 +24,20 @@
 		</c:if>
 		<div class="collapsed">
 			<span>专业管理</span> 
-				<a href="speciality/specialitylist.jsp">专业管理</a>				
 			<c:if test="${user.role=='管理员' }">
-				<a href="speciality/specialityadd.jsp">专业添加</a>
+				<a href="speciality_list">专业管理</a>					
+				<a href="speciality_toadd">专业添加</a>
 			</c:if>	
 		</div>
 
 		<div class="collapsed">
 			<span>成绩管理</span>
 			<c:if test="${user.role=='管理员' }">
-				
-				<a href="report/reportalist.jsp">成绩管理</a>
-				<a href="report/reportadd">成绩添加</a>
+				<a href="report_list">成绩管理</a>
+				<a href="report_toadd">成绩添加</a>
 			</c:if>
 			<c:if test="${user.role=='学生' }">
-			    <a href="report/reportlistmy.jsp">成绩查看</a>
+			    <a href="report_listmy?id=${user.id }">成绩查看</a>
 			</c:if>
 		</div>
 

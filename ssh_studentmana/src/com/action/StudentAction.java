@@ -39,8 +39,12 @@ public class StudentAction extends ActionSupport implements ModelDriven<User> {
 
 	// 分页查看学生信息
 	public String listpage() {
+		if (currentPage == null) {
+			currentPage = 1;
+		}
 		// 封装
 		PageBean pageBean = studentService.listpage(currentPage);
+		
 		// 放入域对象
 		ServletActionContext.getRequest().setAttribute("pageBean", pageBean);
 		return "listpage";
@@ -56,6 +60,10 @@ public class StudentAction extends ActionSupport implements ModelDriven<User> {
 		this.user.setUname(user.getUname());
 		this.user.setPwd(user.getPwd());
 		this.user.setRole(user.getRole());
+		this.user.setSex(user.getSex());
+		this.user.setBirth(user.getBirth());
+		this.user.setTel(user.getTel());
+		this.user.setAddress(user.getAddress());
 		studentService.add(user);
 		return "add";
 	}

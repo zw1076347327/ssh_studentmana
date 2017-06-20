@@ -39,7 +39,7 @@
 		</action>
 	</package>
 	
-	<package name="demo3" extends="struts-default">
+	<package name="demo3" namespace="/" extends="struts-default">
 		<!--分页显示  -->
 		<action name="stu_list" class="studentAction" method="listpage">
 			<result name="listpage">/stu/stulist.jsp</result>
@@ -56,7 +56,10 @@
 		</action>
 		<!-- 删除学生 -->
 		<action name="student_deletestu" class="studentAction" method="student_delete">
-			<result name="delete" type="redirectAction" >stu_list</result>
+			<result name="delete" type="redirectAction" >
+               <param name="namespace">/</param>
+               <param name="actionName">stu_list</param>
+            </result>
 		</action>	
 		<!--到更新界面  -->	
 		<action name="toupdatestu" class="studentAction" method="student_toupdate">
@@ -65,6 +68,64 @@
 		<!--更新用户 -->
 		<action name="update_student" class="studentAction" method="student_update">
 			<result name="update" type="redirectAction">stu_list</result>
+		</action>	
+	</package>
+	
+		<package name="demo4" extends="struts-default">
+	<!-- 专业列表界面 -->	
+		<action name="speciality_list" class="specialityAction" method="list">
+			<result name="list">/speciality/specialitylist.jsp</result>
+		</action>		
+	<!-- 专业添加界面 -->
+		<action name="speciality_toadd" class="specialityAction" method="toaddPage">
+			<result name="toaddPage">/speciality/specialityadd.jsp</result>
+		</action>
+	<!-- 添加专业 -->	
+		<action name="speciality_add" class="specialityAction" method="add">
+			<result name="add" type="redirectAction">speciality_list</result>
+		</action>
+	<!-- 删除专业 -->
+		<action name="speciality_deletespec" class="specialityAction" method="speciality_delete">
+			<result name="delete" type="redirectAction">speciality_list</result>
+		</action>	
+	<!--到更新界面  -->	
+		<action name="toupdatespec" class="specialityAction" method="speciality_toupdate">
+			<result name="toupdate" >/speciality/specialityupdate.jsp</result>
+		</action>
+	<!--更新专业 -->
+		<action name="update_speciality" class="specialityAction" method="speciality_update">
+			<result name="update" type="redirectAction">speciality_list</result>
+		</action>	
+	</package>
+	
+	<package name="demo5" extends="struts-default">
+	<!-- 成绩列表界面 -->	
+		<action name="report_list" class="reportAction" method="list">
+			<result name="list">/report/reportlist.jsp</result>
+		</action>
+	<!-- 学生成绩列表界面 -->	
+		<action name="report_listmy" class="reportAction" method="listmy">
+			<result name="listmy">/report/reportlistmy.jsp</result>
+		</action>			
+	<!-- 成绩添加界面 -->
+		<action name="report_toadd" class="reportAction" method="toaddPage">
+			<result name="toaddPage">/report/reportadd.jsp</result>
+		</action>
+	<!-- 添加成绩 -->	
+		<action name="report_add" class="reportAction" method="add">
+			<result name="add" type="redirectAction">report_list</result>
+		</action>
+	<!-- 删除成绩 -->
+		<action name="report_deleteprice" class="reportAction" method="report_delete">
+			<result name="delete" type="redirectAction">report_list</result>
+		</action>	
+	<!-- 到更新界面  -->	
+		<action name="toupdatereport" class="reportAction" method="report_toupdate">
+			<result name="toupdate" >/report/reportupdate.jsp</result>
+		</action>
+	<!-- 更新成绩 -->
+		<action name="update_report" class="reportAction" method="report_update">
+			<result name="update" type="redirectAction">report_list</result>
 		</action>	
 	</package>
 </struts>

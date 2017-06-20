@@ -25,9 +25,9 @@ public class StudentServiceImpl implements StudentService {
 		//
 		int totalPage = 0;
 		if(totalCount % pageSize == 0){
-			totalPage = totalCount % pageSize;
+			totalPage = totalCount / pageSize;
 		}else {
-			totalPage = totalCount % pageSize + 1;
+			totalPage = totalCount / pageSize + 1;
 		}
 		pageBean.setTotalPage(totalPage);
 		//¿ªÊ¼Î»ÖÃ

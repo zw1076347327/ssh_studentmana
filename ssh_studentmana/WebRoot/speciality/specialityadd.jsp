@@ -24,11 +24,11 @@
 				<ul class="breadcrumb">
 					当前位置：
 					<a href="<%=path%>/index.jsp">首页</a>
-					<span class="divider">/</span> 课程管理
+					<span class="divider">/</span> 专业管理
 				</ul>
 
 				<div class="title_right">
-					<strong>课程添加</strong>
+					<strong>专业添加</strong>
 				</div>
 				<div style="width: 900px; margin: auto">
 					<form method="post">
@@ -36,7 +36,7 @@
 							
 							<tr>
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">姓名：</td>
-								<td width="60%"><input type="text" name="uname" id="uname"
+								<td width="60%"><input type="text" name="uname" id="uname" 
 									class="span1-10" /><font color="red">*</font></td>
 							</tr>
 							<tr>
@@ -74,7 +74,7 @@ function save() {
 		return;
 	}
 	if ($("#speciality").val() == "") {
-		alert("专业名称不能为空！");
+		alert("课程名不能为空！");
 		return;
 	}
 	if ($("#teacher").val() == "") {
@@ -82,7 +82,7 @@ function save() {
 		return;
 	}
 	
-	document.forms[0].action = "<%=path%>/speciality/specialityadd";
+	document.forms[0].action = "speciality_add";
 	document.forms[0].submit();
 
 }

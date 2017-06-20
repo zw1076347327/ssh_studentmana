@@ -35,9 +35,9 @@
 						<table class="table table-bordered">
 							
 							<tr>
-								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">姓名：</td>
+								<!-- <td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">姓名：</td>
 								<td width="60%"><input type="text" name="uname" id="uname"
-									class="span1-10" /><font color="red">*</font></td>
+									class="span1-10" /><font color="red">*</font></td> -->
 							</tr>
 							<tr>
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">课程名称：</td>
@@ -74,14 +74,14 @@ function save() {
 		return;
 	}
 	if ($("#course").val() == "") {
-		alert("课程不能为空！");
+		alert("课程名称不能为空！");
 		return;
 	}
 	if ($("#price").val() == "") {
 		alert("成绩不能为空！");
 		return;
 	}
-	document.forms[0].action = "<%=path%>/report/reportadd";
+	document.forms[0].action = "report_add";
 	document.forms[0].submit();
 
 }

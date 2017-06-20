@@ -34,28 +34,22 @@
 						<table class="table table-bordered">
 
 							<tr>
-								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">学号：</td>
-								<td width="60%"><input type="hidden" name="id" id="id"
-									value="${report.id}" /><input type="text" name="stuno"
-									id="stuno" value="${report.stuno}" class="span1-10" /><font
-									color="red">*</font></td>
+								<!-- <td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">姓名：</td> -->
+								<td width="60%">
+									<input type="hidden" name="id" id="id" value="${report.id}"/>
+									<%-- <input type="text" name="uname"	id="uname" value="${report.uname}" class="span1-10"  readonly="readonly" /><font color="red">*</font> --%>
+								</td>
 							</tr>
 							<tr>
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">课程名称：</td>
-								<td width="60%"><select name="coursename" id="coursename"
-									class="span1-10">
-										<c:forEach items="${courseList}" var="course">
-											<option value="${course.name }">${course.name }</option>
-										</c:forEach>
-								</select> <script>
-						$("#coursename").val('${report.coursename}');
-					</script></td>
-
+								<td width="60%"><input type="text" name="course" id="course" value="${report.course}" 
+								class="span1-10" /><font color="red">*</font>						
+								</td>
 							</tr>
 							<tr>
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">成绩：</td>
-								<td width="60%"><input type="text" name="score" id="score"
-									value="${report.score}" class="span1-10" /><font color="red">*</font>
+								<td width="60%"><input type="text" name="price" id="price"
+									value="${report.price}" class="span1-10" /><font color="red">*</font>
 								</td>
 							</tr>
 
@@ -80,19 +74,19 @@
 </html>
 <script>
 function save() {
-	if ($("#stuno").val() == "") {
-		alert("学号不能为空！");
+	if ($("#uname").val() == "") {
+		alert("姓名不能为空！");
 		return;
 	}
-	if ($("#reportname").val() == "") {
+	if ($("#course").val() == "") {
 		alert("课程名称不能为空！");
 		return;
 	}
-	if ($("#score").val() == "") {
+	if ($("#price").val() == "") {
 		alert("成绩不能为空！");
 		return;
 	}
-	document.forms[0].action = "<%=path%>/report/updatereport";
+	document.forms[0].action = "update_report";
 		document.forms[0].submit();
 
 	}

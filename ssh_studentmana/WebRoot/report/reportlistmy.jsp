@@ -30,37 +30,16 @@
 					 <strong>成绩查看</strong>
 				</div>
 				<div style="width: 900px; margin: auto">
-					<form method="post">
-						<table class="table table-bordered">
-							<tr>
-								<td width="10%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">课程名称：</td>
-								<td width="23%"><input type="text" name="coursename" /></td>
-							</tr>
-						</table>
-
-						<table class="margin-bottom-20 table  no-border">
-							<tr>
-								<td class="text-center"><input type="button"
-									onclick="query();" value="查询" class="btn btn-info "
-									style="width: 80px;" /></td>
-							</tr>
-						</table>
-					</form>
 					<table class="table table-bordered table-hover table-striped">
 						<tbody>
-							<tr align="center">
-								<td><strong>ID</strong></td>
-								<td><strong>姓名</strong></td>
+							<tr align="center">								
 								<td><strong>课程名称</strong></td>
 								<td><strong>成绩</strong></td>
 							</tr>
-							<c:forEach items="${reportList}" var="report">
-								<tr align="center">
-									<td>${report.id}</td>
-									<td>${report。uname}</td>
+							<c:forEach items="${listmy}" var="report">
+								<tr align="center">																	
 									<td>${report.course}</td>
 									<td>${report.price}</td>
-									
 								</tr>
 							</c:forEach>
 
@@ -76,7 +55,7 @@
 </html>
 <script language="JavaScript">	
 function query() {		
-	var action = "<%=path%>/report/reportlistmy";
+	var action = "<%=path%>/report/listmy";
 		document.forms[0].action = action;
 		document.forms[0].submit();
 	}

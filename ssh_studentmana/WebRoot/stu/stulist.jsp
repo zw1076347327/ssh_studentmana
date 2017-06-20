@@ -55,7 +55,7 @@
 									<td>${stu.tel}</td>
 									<td>${stu.address}</td>
 									<td nowrap="nowrap">
-										<a href="<%=path%>/stu/toupdatestu?id=${stu.id}">编辑</a>&nbsp;|&nbsp;
+										<a href="<%=path%>/toupdatestu?id=${stu.id}">编辑</a>&nbsp;|&nbsp;
 										<a href="<%=path%>/student_deletestu?id=${stu.id}">删除</a>
 									</td>
 								</tr>

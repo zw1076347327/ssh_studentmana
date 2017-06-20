@@ -21,7 +21,7 @@
 			</div>
 			<div class="modal-footer">
 				<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-				<a class="btn btn-primary" style="line-height: 20px;" href="index/loginout">确定退出</a>
+				<a class="btn btn-primary" style="line-height: 20px;" href="login">确定退出</a>
 			</div>
 		</div>
 	</div>

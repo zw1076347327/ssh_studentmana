@@ -34,45 +34,38 @@
 					</span> <strong>成绩管理</strong>
 				</div>
 				<div style="width: 900px; margin: auto">
-					<!-- <form method="post">
-						<table class="table table-bordered">
-							<tr>
-								<td width="10%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">学号：</td>
-								<td width="23%"><input type="text" name="stuno" /></td>
-								<td width="10%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">课程名称：</td>
-								<td width="23%"><input type="text" name="coursename" /></td>
-							</tr>
-						</table>
-
-						<table class="margin-bottom-20 table  no-border">
-							<tr>
-								<td class="text-center"><input type="button"
-									onclick="query();" value="查询" class="btn btn-info "
-									style="width: 80px;" /></td>
-							</tr>
-						</table>
-					</form> -->
 					<table class="table table-bordered table-hover table-striped">
 						<tbody>
 							<tr align="center">
 								<td><strong>ID</strong></td>
-								<td><strong>姓名</strong></td>
+								<!-- <td><strong>姓名</strong></td> -->
 								<td><strong>课程名称</strong></td>
 								<td><strong>成绩</strong></td>
 								<td><strong>操作</strong></td>
 							</tr>
-							<c:forEach items="${reportList}" var="report">
+							<c:forEach items="${list}" var="report">
 								<tr align="center">
 									<td>${report.id}</td>
-									<td>${report.uname}</td>
+									<%-- <td>${report.uname}</td> --%>
 									<td>${report.course}</td>
 									<td>${report.price}</td>
 									<td nowrap="nowrap"><a
-										href="<%=path%>/report/toupdatereport?id=${report.id}">编辑</a>&nbsp;|&nbsp;<a
-										href="<%=path%>/report/deletereport?id=${report.id}">删除</a></td>
+										href="<%=path%>/toupdatereport?id=${report.id}">编辑</a>&nbsp;|&nbsp;<a
+										href="<%=path%>/report_deleteprice?id=${report.id}">删除</a></td>
 								</tr>
 							</c:forEach>
-
+							<%-- <c:forEach items="${list}" var="report">
+								<tr align="center">
+									<td>${report[0]}</td>
+									<td>${report[1]}</td>
+									<td>${report[2]}</td>
+									<td>${report[3]}</td>
+									<td nowrap="nowrap"><a
+										href="<%=path%>/toupdatereport?id=${report[0]}">编辑</a>&nbsp;|&nbsp;<a
+										href="<%=path%>/report_deleteprice?id=${report[0]}">删除</a></td>
+								</tr>
+							</c:forEach> --%>
+							
 						</tbody>
 					</table>
 
@@ -85,7 +78,7 @@
 </html>
 <script language="JavaScript">	
 function query() {		
-	var action = "<%=path%>/report/reportlist";
+	var action = "<%=path%>/report/list";
 		document.forms[0].action = action;
 		document.forms[0].submit();
 	}

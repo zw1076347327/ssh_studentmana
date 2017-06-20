@@ -42,7 +42,7 @@
 							</tr>
 							<tr>
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">密码：</td>
-								<td width="60%"><input type="text" name="pwd" id="pwd" value="${user.pwd}"
+								<td width="60%"><input type="password" name="pwd" id="pwd" value="${user.pwd}"
 									class="span1-10" /></td>
 							</tr>
 						</table>

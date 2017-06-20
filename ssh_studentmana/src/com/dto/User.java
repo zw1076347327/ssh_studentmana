@@ -9,8 +9,16 @@ public class User {
 	private String birth;
 	private Integer tel;
 	private String address;
-	
-	
+	//private int reportId;
+//	private Report report;
+//	
+//	
+//	public Report getReport() {
+//		return report;
+//	}
+//	public void setReport(Report report) {
+//		this.report = report;
+//	}
 	public int getId() {
 		return id;
 	}
@@ -59,5 +67,11 @@ public class User {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	/*public int getReportId() {
+		return reportId;
+	}
+	public void setReportId(int reportId) {
+		this.reportId = reportId;
+	}*/
 	
 }

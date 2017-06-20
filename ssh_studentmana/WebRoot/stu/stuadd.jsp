@@ -35,18 +35,18 @@
 						<table class="table table-bordered">							
 							<tr>
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">姓名：</td>
-								<td width="60%"><input type="text" name="username" id="username"
+								<td width="60%"><input type="text" name="uname" id="username"
 									class="span1-10" /><font color="red">*</font></td>
 							</tr>
 							<tr>
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">密码：</td>
-								<td width="60%"><input type="text" name="pwd" id="pwd"
+								<td width="60%"><input type="password" name="pwd" id="pwd"
 									class="span1-10" /><font color="red">*</font></td>
 							</tr>
 							<tr>
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">角色：</td>
-								<td width="60%"><input type="text" name="role" id="role"
-									class="span1-10" /><font color="red">*</font></td>
+								<td width="60%"><input type="text" name="role" value="学生" id="role"
+									class="span1-10" readonly="readonly"/><font color="red">*</font></td>
 							</tr>							
 							<tr>
 								<td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">性别：</td>
